@@ -1,0 +1,22 @@
+
+install.packages("tidyverse")
+install.packages("corrr")
+library(tidyverse)
+library(corrr)
+read.csv ("your path here", header = TRUE) #open file, don't store files for R in iCloud
+mydf <- read.csv ("****.csv", header = TRUE)
+res.cor <- correlate(mydf) #correlation function
+res.cor
+res.cor %>% fashion()
+#now plot the correlation network 
+mydf %>% correlate() %>% 
+  network_plot(min_cor = 0.3)
+install.packages("Bioconductor")
+install.packages("tibble")
+
+#troubleshooting stuff
+install.packages("magrittr") # package installations are only needed the first time you use it
+install.packages("dplyr")    # alternative installation of the %>%
+library(magrittr) # needs to be run every time you start R and want to use %>%
+library(dplyr)    # alternatively, this also loads %>%
+install.packages("fs")
